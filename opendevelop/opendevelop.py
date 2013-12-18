@@ -27,6 +27,7 @@ class OpenDevelop(object):
         url = 'http://%s/api/%s' % (self.host, resource)
         response = requests.request(method, url, data=payload, headers=headers,
                                     files=files)
+        response.raise_for_status()
         try:
             data = response.json()
         except ValueError:
