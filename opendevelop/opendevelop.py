@@ -64,6 +64,3 @@ class OpenDevelop(object):
     def sandbox(self, sandbox_slug):
         resource = 'sandbox/%s' % sandbox_slug
         return self.authenticated_request('get', resource)
-
-    def sandbox_logs(self):
-        pass
