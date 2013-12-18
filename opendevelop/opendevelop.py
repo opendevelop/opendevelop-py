@@ -37,8 +37,9 @@ class OpenDevelop(object):
     def create_sandbox(self):
         pass
 
-    def sandbox(self):
-        pass
+    def sandbox(self, sandbox_slug):
+        resource = 'sandbox/%s' % sandbox_slug
+        return self.request('get', resource)
 
     def sandbox_logs(self):
         pass
