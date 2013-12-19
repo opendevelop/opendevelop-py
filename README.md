@@ -5,13 +5,12 @@
 ### Initiate client
 Initiates the OpenDevelop client. It gets 3 optional parameters;
 
-  * host = os.getenv('OPENDEVELOP_HOST')
-  * client_id = os.getenv('OPENDEVELOP_CLIENT_ID')
-  * client_secret = os.getenv('OPENDEVELOP_CLIENT_SECRET')
+* `host = os.getenv('OPENDEVELOP_HOST')`
+* `client_id = os.getenv('OPENDEVELOP_CLIENT_ID')`
+* `client_secret = os.getenv('OPENDEVELOP_CLIENT_SECRET')`
 
-	from opendevelop import OpenDevelop
-	
-	client = OpenDevelop()
+		from opendevelop import OpenDevelop	
+		client = OpenDevelop()
 	
 ### Get available images
 Returns a Python list with the available images for the current OpenDevelop installation
