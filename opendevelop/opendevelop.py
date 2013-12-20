@@ -43,23 +43,23 @@ class OpenDevelop(object):
     def images(self):
         return self.request('get', 'images')
 
-    def create_sandbox(self, image, cmd, file_list=[]):
+    def create_sandbox(self, image, cmd, files=[]):
         if (type(cmd) == list):
             cmd = json.dumps(cmd)
         payload = {
             'image': image,
             'cmd': cmd
         }
-        files = {}
-        for f in file_list:
+        file_dict = {}
+        for f in files:
             if (not (type(f) == str)):
                 raise Exception('File should be absolute path in string format')
             if (not os.path.exists(f)):
                 raise Exception('File %s does not exist.' % f)
             file_name = os.path.basename(f)
-            files[file_name] = (file_name, open(f, 'rb'))
+            file_dict[file_name] = (file_name, open(f, 'rb'))
         return self.authenticated_request('post', 'sandbox', payload=payload,
-                                          files=files)
+                                          files=file_dict)
 
     def sandbox(self, sandbox_slug):
         resource = 'sandbox/%s' % sandbox_slug
