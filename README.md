@@ -1,5 +1,10 @@
 # OpenDevelop Python wrapper
 
+## Installation
+Installation of the OpenDevelop Python wrapper can be done using pip.
+
+	pip install opendevelop
+
 ## Usage
 
 ### Initiate client
@@ -9,8 +14,8 @@ Initiates the OpenDevelop client. It gets 3 optional parameters;
 * `client_id = os.getenv('OPENDEVELOP_CLIENT_ID')`
 * `client_secret = os.getenv('OPENDEVELOP_CLIENT_SECRET')`
 
-		from opendevelop import OpenDevelop	
-		client = OpenDevelop()
+	from opendevelop import OpenDevelop	
+	client = OpenDevelop()
 	
 ### Get available images
 Returns a Python list with the available images for the current OpenDevelop installation
