@@ -80,7 +80,7 @@ class OpenDevelop(object):
         """
         return self.request('get', 'images')
 
-    def create_sandbox(self, image, cmd, files=[]):
+    def create_sandbox(self, image, cmd, files=[], timeout=None):
         """
         Create a sandbox and execute the given commands inside the sandbox.
         If any files given, they should be uploaded to the sandbox' data
@@ -92,6 +92,8 @@ class OpenDevelop(object):
             'image': image,
             'cmd': cmd
         }
+        if (timeout):
+            payload['timeout'] = timeout
         file_dict = {}
         for f in files:
             if (not (type(f) == str)):
