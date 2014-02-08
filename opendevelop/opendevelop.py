@@ -102,12 +102,12 @@ class OpenDevelop(object):
                 raise Exception('File %s does not exist.' % f)
             file_name = os.path.basename(f)
             file_dict[file_name] = (file_name, open(f, 'rb'))
-        return self.authenticated_request('post', 'sandbox', payload=payload,
+        return self.authenticated_request('post', 'sandboxes', payload=payload,
                                           files=file_dict)
 
     def sandbox(self, sandbox_slug):
         """
         Return information about a sandbox in a Python dict
         """
-        resource = 'sandbox/%s' % sandbox_slug
+        resource = 'sandboxes/%s' % sandbox_slug
         return self.authenticated_request('get', resource)
