@@ -10,7 +10,7 @@ with open('./requirements.txt') as requirements_txt:
     requirements = [line for line in requirements_txt]
 
 setup(name='OpenDevelop',
-      version='0.1',
+      version='0.2',
       description='Python wrapper for OpenDevelop',
       author='Paris Kasidiaris',
       author_email='pariskasidiaris@gmail.com',
